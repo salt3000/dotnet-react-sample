@@ -19,8 +19,10 @@ export default function ActivityDetails({ activity }: Props) {
                 <Card.Description>{activity.description}</Card.Description>
             </Card.Content>
             <Card.Content extra>
-                <Button basic color="blue" content="Edit" />
-                <Button basic color="grey" content="Cancel" />
+                <Button.Group widths={3}>
+                    <Button basic color="blue" content="Edit" />
+                    <Button basic color="grey" content="Cancel" />
+                </Button.Group>
             </Card.Content>
         </Card>
     );
