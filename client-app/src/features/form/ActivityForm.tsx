@@ -19,7 +19,6 @@ export default function ActivityForm() {
                 />
                 <Button
                     floated="right"
-                    positive
                     type="button"
                     content="cancel"
                 />
