@@ -5,9 +5,14 @@ import { Activity } from "../../app/modules/activity";
 interface Props {
     activity: Activity;
     cancelSelectActivity: () => void;
+    openForm: (id: string) => void;
 }
 
-export default function ActivityDetails({ activity, cancelSelectActivity }: Props) {
+export default function ActivityDetails({
+    activity,
+    cancelSelectActivity,
+    openForm,
+}: Props) {
     return (
         <Card fluid>
             {console.log(activity)}
@@ -21,8 +26,18 @@ export default function ActivityDetails({ activity, cancelSelectActivity }: Prop
             </Card.Content>
             <Card.Content extra>
                 <Button.Group widths={3}>
-                    <Button basic color="blue" content="Edit" />
-                    <Button basic color="grey" content="Cancel" onClick={() => cancelSelectActivity()}/>
+                    <Button
+                        basic
+                        color="blue"
+                        content="Edit"
+                        onClick={() => openForm(activity.id)}
+                    />
+                    <Button
+                        basic
+                        color="grey"
+                        content="Cancel"
+                        onClick={() => cancelSelectActivity()}
+                    />
                 </Button.Group>
             </Card.Content>
         </Card>
